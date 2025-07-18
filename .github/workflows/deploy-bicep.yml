@@ -38,7 +38,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}
-          resourceGroupName: 'azure one'
+          resourceGroupName: 'myTestRG'
           template: ./main.bicep
           parameters: |
             domainName=${{ secrets.DOMAIN_NAME }}
