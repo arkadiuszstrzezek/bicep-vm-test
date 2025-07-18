@@ -39,7 +39,7 @@ jobs:
         with:
           subscriptionId: ${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}
           resourceGroupName: 'myTestRG'
-          template: ./main.bicep
+          template: ./DomainController/main.bicep
           parameters: |
             domainName=${{ secrets.DOMAIN_NAME }}
             adminUsername=${{ secrets.ADMIN_USERNAME }}
@@ -52,7 +52,7 @@ jobs:
         with:
           subscriptionId: ${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}
           resourceGroupName: 'myTestRG'
-          template: ./main.bicep
+          template: ./DomainController/main.bicep
           parameters: |
             domainName=${{ secrets.DOMAIN_NAME }}
             adminUsername=${{ secrets.ADMIN_USERNAME }}
