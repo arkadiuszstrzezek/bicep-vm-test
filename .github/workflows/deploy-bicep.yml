@@ -41,10 +41,10 @@ jobs:
           resourceGroupName: 'azure one'
           template: ./main.bicep
           parameters: |
-            domainName=<your.domain.name>
-            adminUsername=<localadminusername>
-            adminPassword=<YourPasswordHere>
-            safeModePassword=<YourSafeModePasswordHere>
+            domainName=${{ secrets.DOMAIN_NAME }}
+            adminUsername=${{ secrets.ADMIN_USERNAME }}
+            adminPassword=${{ secrets.ADMIN_PASSWORD }}
+            safeModePassword=${{ secrets.SAFEMODE_PASSWORD }}
           deploymentMode: Validate
 
       - name: Deploy Bicep template (Final)
@@ -54,10 +54,10 @@ jobs:
           resourceGroupName: 'myTestRG'
           template: ./main.bicep
           parameters: |
-            domainName=<your.domain.name>
-            adminUsername=<localadminusername>
-            adminPassword=<YourPasswordHere>
-            safeModePassword=<YourSafeModePasswordHere>
+            domainName=${{ secrets.DOMAIN_NAME }}
+            adminUsername=${{ secrets.ADMIN_USERNAME }}
+            adminPassword=${{ secrets.ADMIN_PASSWORD }}
+            safeModePassword=${{ secrets.SAFEMODE_PASSWORD }}
           deploymentMode: Incremental
           
               
