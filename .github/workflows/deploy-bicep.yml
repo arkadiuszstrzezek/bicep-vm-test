@@ -37,27 +37,27 @@ jobs:
       - name: Deploy Bicep template (WhatIf)
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: 'myTestRG'
           template: ./DomainController/main.bicep
           parameters: |
-            domainName=${{ secrets.DOMAIN_NAME }}
+            domainName=example.com
             adminUsername=${{ secrets.ADMIN_USERNAME }}
             adminPassword=${{ secrets.ADMIN_PASSWORD }}
-            safeModePassword=${{ secrets.SAFEMODE_PASSWORD }}
+            safeModePassword=${{ secrets.SAFE_MODE_PASSWORD }}
           deploymentMode: Validate
 
       - name: Deploy Bicep template (Final)
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroupName: 'myTestRG'
           template: ./DomainController/main.bicep
           parameters: |
-            domainName=${{ secrets.DOMAIN_NAME }}
+            domainName=example.com
             adminUsername=${{ secrets.ADMIN_USERNAME }}
             adminPassword=${{ secrets.ADMIN_PASSWORD }}
-            safeModePassword=${{ secrets.SAFEMODE_PASSWORD }}
+            safeModePassword=${{ secrets.SAFE_MODE_PASSWORD }}
           deploymentMode: Incremental
           
               
