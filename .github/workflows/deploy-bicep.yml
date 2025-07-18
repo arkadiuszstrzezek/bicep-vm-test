@@ -42,9 +42,9 @@ jobs:
           template: ./DomainController/main.bicep
           parameters: |
             domainName=example.com
-            adminUsername=${{ secrets.ADMIN_USERNAME }}
-            adminPassword=${{ secrets.ADMIN_PASSWORD }}
-            safeModePassword=${{ secrets.SAFE_MODE_PASSWORD }}
+            adminUsername=myuser
+            adminPassword=MyP@ssw0rd123!
+            safeModePassword=MyP@ssw0rd123!
           deploymentMode: Validate
 
       - name: Deploy Bicep template (Final)
@@ -55,9 +55,9 @@ jobs:
           template: ./DomainController/main.bicep
           parameters: |
             domainName=example.com
-            adminUsername=${{ secrets.ADMIN_USERNAME }}
-            adminPassword=${{ secrets.ADMIN_PASSWORD }}
-            safeModePassword=${{ secrets.SAFE_MODE_PASSWORD }}
+            adminUsername=myuser
+            adminPassword=MyP@ssw0rd123!
+            safeModePassword=MyP@ssw0rd123!
           deploymentMode: Incremental
           
               
