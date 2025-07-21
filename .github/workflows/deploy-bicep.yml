@@ -28,4 +28,4 @@ jobs:
           az deployment group create \
             --resource-group myTestRG \
             --template-file DomainController/main.bicep \
-            --parameters adminUsername=${{ secrets.ADMIN_USERNAME }} adminPassword=${{ secrets.ADMIN_PASSWORD }}
+            --parameters adminUsername=${{ secrets.ADMIN_USERNAME }} adminPassword=${{ secrets.ADMIN_PASSWORD }} safeModePassword=${{ secrets.SAFE_MODE_PASSWORD }}
