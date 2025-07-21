@@ -28,4 +28,4 @@ jobs:
           az deployment group create \
             --resource-group myTestRG \
             --template-file DomainController/main.bicep \
-            --parameters DomainController/parameters.json
+            --parameters adminUsername=${{ secrets.ADMIN_USERNAME }} adminPassword=${{ secrets.ADMIN_PASSWORD }}
