@@ -26,6 +26,6 @@ jobs:
       - name: Deploy Bicep Template
         run: |
           az deployment group create \
-            --resource-group <RESOURCE_GROUP_NAME> \
+            --resource-group myTestRG \
             --template-file DomainController/main.bicep \
             --parameters DomainController/parameters.json
